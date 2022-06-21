@@ -14,30 +14,24 @@ const MuiTable = () => {
 
     return (
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table sx={{ minWidth: 1000 }} aria-label="simple table">
             <TableHead>
                 <TableCell>Regions</TableCell>
-                <TableCell align="center">2017</TableCell>
-                <TableCell align="center">2018</TableCell>
-                <TableCell align="center">2019</TableCell>
-              <TableRow>
-                <TableCell>Kyivska</TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Odeska</TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Lvivska</TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-              </TableRow>
+                <TableCell align="center">2017
+                    <TableCell align="center">XX</TableCell>
+                    <TableCell align="center">YY</TableCell>
+                    <TableCell align="center">ZZ</TableCell>
+                </TableCell>
+                <TableCell align="center">2018
+                    <TableCell align="center">XX</TableCell>
+                    <TableCell align="center">YY</TableCell>
+                    <TableCell align="center">ZZ</TableCell>
+                </TableCell>
+                <TableCell align="center">2019
+                    <TableCell align="center">XX</TableCell>
+                    <TableCell align="center">YY</TableCell>
+                    <TableCell align="center">ZZ</TableCell>
+                </TableCell>
             </TableHead>
             <TableBody>
               {MOCK_DATA.map((row) => (
@@ -45,18 +39,40 @@ const MuiTable = () => {
                   key={row.Kyivska}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
-                    {row.Kyivska.G.XX}
-                  </TableCell>
-                  <TableCell align="right">{row.value}</TableCell>
-                  <TableCell align="right">{row.value}</TableCell>
-                  <TableCell align="right">{row.value}</TableCell>
-                  
+                    <TableCell>Kyivska</TableCell>
+                    <TableCell align="left">{row.Kyivska.G[2017].XX.value}</TableCell>
+                    <TableCell align="left">{row.Kyivska.G[2017].YY.value}</TableCell>
+                    <TableCell align="left">{row.Kyivska.G[2017].ZZ.value}</TableCell>
                 </TableRow>
+              
+              ))}
+              {MOCK_DATA.map((row) => (
+                <TableRow
+                  key={row.Kyivska}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                    <TableCell>Odeska</TableCell>
+                    <TableCell align="right">{row.Odeska.G[2017].XX.value}</TableCell>
+                    <TableCell align="right">{row.Odeska.G[2017].YY.value}</TableCell>
+                    <TableCell align="right">{row.Odeska.G[2017].ZZ.value}</TableCell>
+                </TableRow>
+              
+              ))}
+              {MOCK_DATA.map((row) => (
+                <TableRow
+                  key={row.Kyivska}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                    <TableCell>Lvivska</TableCell>
+                    <TableCell align="right">{row.Lvivska.G[2017].XX.value}</TableCell>
+                    <TableCell align="right">{row.Lvivska.G[2017].YY.value}</TableCell>
+                    <TableCell align="right">{row.Lvivska.G[2017].ZZ.value}</TableCell>
+                </TableRow>
+              
               ))}
             </TableBody>
           </Table>
-        </TableContainer>
+        </TableContainer> 
     );
 }
 
